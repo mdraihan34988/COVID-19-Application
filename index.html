@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+	<script src="js/myScript.js"></script>
+</head>
+<body ng-app="MyApp" ng-controller="MyCtrl">
+	 <div class="container">
+		<div class="jumbotron py-1">
+			<img class="center" src="img/pngtree-stay-safe-and-stay-home-vector-illustration-png-image_2166614.jpg" alt="loading failed!">
+			<h1>{{title}}</h1>
+			<p class="pt-3">
+				COVID-19 ভাইরাস বিভিন্ন লোকের উপর বিভিন্নভাবে প্রভাব ফেলে থাকে। আক্রান্ত হওয়া বেশিরভাগ মানুষই হালকা থেকে মাঝারি মানের অসুস্থতা অনুভব করবেন এবং হাসপাতালে ভর্তি না হয়েও সুস্থ হয়ে উঠবেন।
+			</p>
+			
+			
+
+
+		 </div>
+	 </div>
+	 <div class="container">
+		<div class="row justify-content-center">
+			
+		 
+			<div class="col-5">
+				<h4>সবচেয়ে সাধারণ উপসর্গসমূহ:</h4>
+			   <ul>
+				   <li>জ্বর</li>
+				   <li>শুকনো কাশি</li>
+				   <li>ক্লান্তিভাব</li>
+				   
+	   
+			   </ul>
+			   
+	   
+		   </div>
+		   
+		   <div class="col-5">
+			   <h4>কম সাধারণ উপসর্গসমূহ:</h4>
+				   <ul>
+					   <li>ব্যথা ও যন্ত্রণা</li>
+					   <li>গলা ব্যথা</li>
+					   <li>ডায়রিয়া</li>
+					   <li>কনজাংটিভাইটিস</li>
+					   <li>মাথা ব্যথা</li>
+					   <li>স্বাদ বা গন্ধ না পাওয়া</li>
+					   <li>ত্বকে ফুসকুড়ি ওঠা বা আঙুল বা পায়ের পাতা ফ্যাকাসে হয়ে যাওয়া</li>
+		   
+				   </ul>
+		   </div>
+		</div>
+		<h2>All Over the World</h2>
+		<div class="row text-center mt-4">
+			<div class="col-md-4 mt-4">
+				<div class="card bg-warning text-black">
+					<div class="card-body"><h3>Confirmed Cases</h3><h3>{{case_data.confirmed.value}}</h3></div>
+				</div>
+			</div>
+			
+			<div class="col-md-4 mt-4">
+				<div class="card bg-success text-black">
+					<div class="card-body"><h3>Recovered Cases</h3><h3>{{case_data.recovered.value}}</h3></div>
+				</div>
+			</div>
+			<div class="col-md-4 mt-4">
+				<div class="card bg-danger text-black">
+					<div class="card-body"><h3>Death Cases</h3><h3>{{case_data.deaths.value}}</h3></div>
+				</div>
+			</div>
+			<input type="text" class="form-control mt-3" name="" ng-model="country" ng-change="get_country_data()" id="" placeholder="Search by Country">
+		</div>
+
+		<div ng-if="c_data" class="mt-4">
+			<h3 style="color:blueviolet">{{country}}</h3>
+			<div class="row mt-4 text-center">
+			
+				<div class="col-md-4 mt-4">
+					<div class="card bg-warning text-black">
+						<div class="card-body"><h3>Confirmed Cases</h3><h3>{{c_data.confirmed.value}}</h3></div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 mt-4">
+					<div class="card bg-success text-black">
+						<div class="card-body"><h3>Recovered Cases</h3><h3>{{c_data.recovered.value}}</h3></div>
+					</div>
+				</div>
+				<div class="col-md-4 mt-4">
+					<div class="card bg-danger text-black">
+						<div class="card-body"><h3>Death Cases</h3><h3>{{c_data.deaths.value}}</h3></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	 
+	
+	
+</body>
+</html>
